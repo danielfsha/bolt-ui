@@ -1,7 +1,11 @@
-require("@testing-library/jest-dom");
+import "@testing-library/jest-dom";
+import { render } from "@testing-library/react";
 
-describe("button", () => {
-  it("displays a button", () => {
-    // ...
+import Button from "./index";
+
+describe("Button", () => {
+  it("should render", () => {
+    const { getByText } = render(<Button />);
+    expect(getByText("hello this is button")).toBeInTheDocument();
   });
 });

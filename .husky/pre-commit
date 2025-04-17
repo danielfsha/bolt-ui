@@ -1,1 +1,10 @@
+#!/bin/bash
+
+# run test files before commit
 npm test
+
+# run lint before commit
+npm run lint
+
+# run build before commit
+npm run build
