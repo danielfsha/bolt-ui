@@ -1,0 +1,58 @@
+version: 2.1
+
+orbs:
+  node: circleci/node@5
+
+jobs:
+  lint_code:
+    # Install node dependencies and run tests
+    executor: node/default
+    environment:
+      JEST_JUNIT_OUTPUT_DIR: ./test-results/
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: yarn
+      - run:
+          command: yarn run lint:fix
+
+  test_code:
+    # Build node project
+    executor: node/default
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: yarn
+      - run:
+          command: yarn run test
+
+  build_code:
+    # Build node project
+    executor: node/default
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: yarn
+      - run:
+          command: yarn run build
+
+  deploy:
+    # This is an example deploy job, not actually used by the workflow
+
+    docker:
+      - image: cimg/base:stable
+
+    steps:
+      # Replace this with steps to deploy to users
+
+      - run:
+          name: deploy
+
+          command: "#e.g. ./deploy.sh"
+
+workflows:
+  build_app_and_deploy:
+    jobs:
+      - lint_code:
+      - test_code:
+      - build_code:

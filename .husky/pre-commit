@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # run test files before commit
-npm test
+yarn run test
 
 # run lint before commit
-npm run lint
+yarn run lint
 
 # run build before commit
-npm run build
+yarn run build
