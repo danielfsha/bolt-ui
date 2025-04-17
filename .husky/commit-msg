@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# This file is used by Husky to run commitlint on commit messages
+# It is executed when a commit message is created
+# The commit message is passed as an argument to this script
+npx --no-install commitlint --edit "$1"
