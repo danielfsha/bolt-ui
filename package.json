@@ -1,5 +1,5 @@
 {
-  "name": "bolt-ui",
+  "name": "spark-ui",
   "description": "This UI library is a collection of components that can be used to build a UI for your application.",
   "version": "0.0.1",
   "main": "dist/cjs/index.js",
@@ -68,7 +68,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/danielfsha/bolt-ui.git"
+    "url": "https://github.com/danielfsha/spark-ui.git"
   },
   "license": "MIT",
   "dependencies": {}
