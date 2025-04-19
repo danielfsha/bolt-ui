@@ -34,16 +34,21 @@ export default [
         ],
       }),
       postcss({
-        extensions: ["*.css"],
-        inject: true,
-        extract: false,
-      }),
+        config: "./postcss.config.mjs",
+        extract: true, // Set to a filename to extract CSS to a file
+        minimize: true, // Minify CSS
+        sourceMap: true // Optional: generate source maps
+      }), 
     ],
   },
 
   {
     input: "dist/esm/types/index.d.ts",
-    output: [{ file: "dist/index.d.ts", format: "esm" }],
+    output: [{ 
+      file: "dist/index.d.ts", 
+      format: "esm" 
+    }],
     plugins: [dts()],
+    external: [/\.css$/],
   },
 ];
