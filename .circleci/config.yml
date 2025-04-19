@@ -5,7 +5,6 @@ orbs:
 
 jobs:
   lint_code:
-    # Install node dependencies and run tests
     executor: node/default
     environment:
       JEST_JUNIT_OUTPUT_DIR: ./test-results/
@@ -17,7 +16,6 @@ jobs:
           command: yarn run lint:fix
 
   test_code:
-    # Build node project
     executor: node/default
     steps:
       - checkout
@@ -27,7 +25,6 @@ jobs:
           command: yarn run test
 
   build_code:
-    # Build node project
     executor: node/default
     steps:
       - checkout
@@ -37,26 +34,20 @@ jobs:
           command: yarn run build
 
   deploy:
-    # This is an example deploy job, not actually used by the workflow
-
     docker:
       - image: cimg/base:stable
-
     steps:
-      # Replace this with steps to deploy to users
-
       - run:
           name: deploy
-
           command: "#e.g. ./deploy.sh"
 
 workflows:
   build_app_and_deploy:
     jobs:
       - lint_code
-      - test_code
+      - test_code:
           requires:
             - lint_code
-      - build_code
+      - build_code:
           requires:
             - test_code
