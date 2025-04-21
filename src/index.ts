@@ -7,7 +7,7 @@ export * from "./components/Accordion";
 export * from "./components/AlertDialog";
 
 // Avatar
-// export * from "./components/Avatar";
+export * from "./components/Avatar";
 
 // Button
 export * from "./components/Button";
