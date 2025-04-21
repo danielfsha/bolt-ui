@@ -16,7 +16,14 @@ const meta = {
       control: { type: "select" },
     },
     variant: {
-      options: ["primary", "seconary", "outline", "destructive", "success"],
+      options: [
+        "primary",
+        "seconary",
+        "outline",
+        "destructive",
+        "success",
+        "ghost",
+      ],
       control: { type: "select" },
     },
     children: {

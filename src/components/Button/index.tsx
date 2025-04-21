@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 
 import { forwardRef, HTMLAttributes } from "react";
 import { VariantProps, cva } from "class-variance-authority";
@@ -10,13 +10,14 @@ const buttonVariants = cva(
     variants: {
       variant: {
         primary:
-          "border-[0.2px] border-gray-300 bg-white text-[#474747] inset-shadow-[0_-4px_2px_0_rgba(226,226,226,1)]",
+          "border-[0.2px] border-gray-300 bg-white text-[#474747] inset-shadow-[0_-2px_2px_0_rgba(226,226,226,1)]",
         secondary:
-          "text-white bg-[#848484] shadow shadow-inner border-[#474747] border-opacity-60 inset-shadow-[0_-4px_2px_0_rgba(0,0,0,1)]",
+          "text-white bg-[#848484] shadow shadow-inner border-[#474747] border-opacity-60 inset-shadow-[0_-2px_2px_0_rgba(0,0,0,1)]",
+        ghost: "text-[#474747] bg-gray-200 text-[#848484]",
         destructive:
-          "bg-red-300/20 text-red-500 border-1 border-red-500 inset-shadow-[0_-4px_2px_0_rgba(255,51,51,0.6)]",
+          "bg-red-300/20 text-red-700 border-1 border-red-500 inset-shadow-[0_-2px_2px_0_rgba(255,51,51,0.6)]",
         success:
-          "bg-green-300/20 text-green-500 border-1 border-green-500 inset-shadow-[0_-4px_2px_0_rgba(51,255,58,0.6)]",
+          "bg-green-300/20 text-green-700 border-1 border-green-500 inset-shadow-[0_-2px_2px_0_rgba(51,255,58,0.6)]",
         outline: "border-1 border-[#474747] text-[#474747]",
       },
       size: {
@@ -33,14 +34,14 @@ const buttonVariants = cva(
   }
 );
 
-interface ButtonProps
-  extends HTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {}
+type ButtonProps = HTMLAttributes<HTMLButtonElement> &
+  VariantProps<typeof buttonVariants>;
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, ...props }, ref) => {
     return (
       <button
+        data-slot="button"
         ref={ref}
         className={cn(
           buttonVariants({
@@ -57,4 +58,4 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
 Button.displayName = "Button";
 
-export { Button, ButtonProps, buttonVariants };
+export { Button };
