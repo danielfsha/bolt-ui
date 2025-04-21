@@ -37,25 +37,25 @@ export * from "./components/Menu";
 export * from "./components/NumberField";
 
 // Popover
-// export * from "./components/Popover";
+export * from "./components/Popover";
 
 // Progress
-// export * from "./components/Progress";
+export * from "./components/Progress";
 
 // Radio
-// export * from "./components/Radio";
+export * from "./components/Radio";
 
 // ScrollArea
-// export * from "./components/ScrollArea";
+export * from "./components/ScrollArea";
 
 // Select
-// export * from "./components/Select";
+export * from "./components/Select";
 
 // Slider
-// export * from "./components/Slider";
+export * from "./components/Slider";
 
 // Switch
-// export * from "./components/Switch";
+export * from "./components/Switch";
 
 // Tabs
 // export * from "./components/Tabs";
