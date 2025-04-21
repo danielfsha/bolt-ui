@@ -22,19 +22,19 @@ export * from "./components/Checkbox";
 export * from "./components/Collapsible";
 
 // Dialog
-// export * from "./components/Dialog";
+export * from "./components/Dialog";
 
 // Divider
-// export * from "./components/Divider";
+export * from "./components/Divider";
 
 // Input
-// export * from "./components/Input";
+export * from "./components/Input";
 
 // Menu
-// export * from "./components/Menu";
+export * from "./components/Menu";
 
 // NumberField
-// export * from "./components/NumberField";
+export * from "./components/NumberField";
 
 // Popover
 // export * from "./components/Popover";
