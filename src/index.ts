@@ -16,7 +16,7 @@ export * from "./components/Button";
 // export * from "./components/Calendar";
 
 // Checkbox
-// export * from "./components/Checkbox";
+export * from "./components/Checkbox";
 
 // Collapsible
 // export * from "./components/Collapsible";
