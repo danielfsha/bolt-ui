@@ -6,6 +6,13 @@ import dts from "rollup-plugin-dts";
 import postcss from "rollup-plugin-postcss";
 import packageJson from "./package.json" with { type: "json" };
 
+const externalDeps = [
+  ...Object.keys(packageJson.dependencies || {}),
+  ...Object.keys(packageJson.peerDependencies || {}),
+  "@floating-ui/react",
+  "@floating-ui/react-dom",
+];
+
 export default [
   {
     input: "src/index.ts",
@@ -21,6 +28,7 @@ export default [
         sourcemap: true,
       },
     ],
+    external: externalDeps,
     plugins: [
       resolve(),
       commonjs(),
@@ -31,23 +39,25 @@ export default [
           "**/*.test.ts",
           "**/*.stories.tsx",
           "**/*.stories.ts",
+          "**/*.d.ts",
         ],
       }),
       postcss({
         config: "./postcss.config.mjs",
-        extract: true, // Set to a filename to extract CSS to a file
-        minimize: true, // Minify CSS
-        sourceMap: true // Optional: generate source maps
-      }), 
+        extract: true,
+        minimize: true,
+        sourceMap: true,
+      }),
     ],
   },
-
   {
     input: "dist/esm/types/src/index.d.ts",
-    output: [{ 
-      file: "dist/index.d.ts", 
-      format: "esm" 
-    }],
+    output: [
+      {
+        file: "dist/index.d.ts",
+        format: "esm",
+      },
+    ],
     plugins: [dts()],
     external: [/\.css$/],
   },

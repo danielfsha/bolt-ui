@@ -4,7 +4,7 @@ import "./index.css";
 export * from "./components/Accordion";
 
 // Alert Dialog
-// export * from "./components/AlertDialog";
+export * from "./components/AlertDialog";
 
 // Avatar
 // export * from "./components/Avatar";
