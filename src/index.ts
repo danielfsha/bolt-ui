@@ -1,7 +1,7 @@
 import "./index.css";
 
 // Accordion
-// export * from "./components/Accordion";
+export * from "./components/Accordion";
 
 // Alert Dialog
 // export * from "./components/AlertDialog";
