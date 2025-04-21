@@ -19,7 +19,7 @@ export * from "./components/Button";
 export * from "./components/Checkbox";
 
 // Collapsible
-// export * from "./components/Collapsible";
+export * from "./components/Collapsible";
 
 // Dialog
 // export * from "./components/Dialog";
