@@ -58,16 +58,16 @@ export * from "./components/Slider";
 export * from "./components/Switch";
 
 // Tabs
-// export * from "./components/Tabs";
+export * from "./components/Tabs";
 
 // textarea
 export * from "./components/Textarea";
 
 // Toast
-// export * from "./components/Toast";
+export * from "./components/Toast";
 
 // Toggle
-// export * from "./components/Toggle";
+export * from "./components/Toggle";
 
 // Tooltip
-// export * from "./components/Tooltip";
+export * from "./components/Tooltip";
